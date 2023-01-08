@@ -1,6 +1,6 @@
 <template>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Jahangir</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -11,7 +11,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <router-link class="nav-link active" to="/" >Home</router-link>
                         </li>
                     </ul>
                 </div>
@@ -20,5 +20,9 @@
     </header>
 </template>
 
-<script setup>
-</script>
+<style scoped>
+.router-link-active {
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+}
+</style>
