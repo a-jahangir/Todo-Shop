@@ -1,6 +1,7 @@
 <template>
-  <router-view/>
+  <navBar />
 </template>
 
-<style>
-</style>
+<script setup>
+import navBar from './components/Header.vue'
+</script>
