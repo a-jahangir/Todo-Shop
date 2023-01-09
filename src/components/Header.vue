@@ -1,6 +1,6 @@
 <template>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm" data-bs-theme="dark">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-body-tertiary shadow-sm" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Jahangir</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -12,6 +12,9 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <router-link class="nav-link active" to="/" >Home</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link active" to="/tasks" >Tasks</router-link>
                         </li>
                     </ul>
                 </div>
