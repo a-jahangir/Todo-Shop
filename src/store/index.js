@@ -22,6 +22,17 @@ export default createStore({
         .catch(function (response) {
           console.log(response)
         })
+    },
+    filterTasks ({ commit }, limit) {
+      console.log(commit, limit)
+      axios
+        .get(`https://jsonplaceholder.typicode.com/todos?_limit=${limit}`)
+        .then(function (response) {
+          commit('setTasks', response.data)
+        })
+        .catch(function (response) {
+          console.log(response)
+        })
     }
   },
   modules: {
