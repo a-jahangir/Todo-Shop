@@ -9,6 +9,8 @@
                     necessitatibus voluptatem impedit eum obcaecati? Quisquam quasi saepe
                     iste ea, nisi tenetur!
                 </p>
+                <router-link class="btn btn-dark" to="/tasks" >Tasks</router-link>
+                <router-link class="btn btn-dark ms-3" to="/Shop" >Shop</router-link>
             </div>
         </div>
     </div>
