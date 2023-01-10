@@ -16,6 +16,9 @@
                         <li class="nav-item">
                             <router-link class="nav-link active" to="/tasks" >Tasks</router-link>
                         </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link active" to="/products" >Shop</router-link>
+                        </li>
                     </ul>
                 </div>
             </div>
