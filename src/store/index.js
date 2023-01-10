@@ -14,6 +14,12 @@ export default createStore({
     },
     createTasks (state, newTasks) {
       state.tasks.unshift(newTasks)
+    },
+    updateTask (state, updateTask) {
+      const index = state.tasks.findIndex(task => task.id === updateTask.id)
+      if (index !== -1) {
+        state.tasks.splice(index, 1, updateTask)
+      }
     }
   },
   actions: {
@@ -48,7 +54,28 @@ export default createStore({
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Your work has been saved',
+            title: 'Task Created',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        })
+        .catch(function (response) {
+          console.log(response)
+        })
+    },
+    async updateTask ({ commit }, task) {
+      await axios
+        .put(`https://jsonplaceholder.typicode.com/todos/${task.id}`, {
+          id: task.id,
+          title: task.title,
+          completed: !task.completed
+        })
+        .then(function (response) {
+          commit('updateTask', response.data)
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Task Edited',
             showConfirmButton: false,
             timer: 1500
           })
