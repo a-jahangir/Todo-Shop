@@ -1,5 +1,7 @@
 <template>
     <div class="container mt-5">
+        <createTask />
+        <hr>
         <filterTasks />
         <div class="row g-3">
             <div v-for="task in tasks" :key="task.id" class="col-md-4">
@@ -18,6 +20,7 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 import filterTasks from '../components/Tasks/Filtertasks.vue'
+import createTask from '../components/Tasks/Create.vue'
 
 const store = useStore()
 const tasks = computed(() => store.state.tasks)

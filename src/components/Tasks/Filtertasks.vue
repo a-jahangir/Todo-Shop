@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-md-2 mb-4">
-            <h6>Filter Tasks:</h6>
+            <h6>Number Of Tasks:</h6>
             <select v-model="number" @change="filterTasks" class="form-select form-select-sm">
                 <option value="5">5</option>
                 <option value="10">10</option>
