@@ -20,6 +20,9 @@ export default createStore({
       if (index !== -1) {
         state.tasks.splice(index, 1, updateTask)
       }
+    },
+    removeTask (state, id) {
+      state.tasks = state.tasks.filter(task => task.id !== id)
     }
   },
   actions: {
@@ -76,6 +79,23 @@ export default createStore({
             position: 'top-end',
             icon: 'success',
             title: 'Task Edited',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        })
+        .catch(function (response) {
+          console.log(response)
+        })
+    },
+    async deleteTask ({ commit }, id) {
+      await axios
+        .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        .then(function () {
+          commit('removeTask', id)
+          Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            title: 'Task Deleted',
             showConfirmButton: false,
             timer: 1500
           })

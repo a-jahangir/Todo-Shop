@@ -11,7 +11,10 @@
                             <del v-if="task.completed">{{ task.title }}</del>
                             <div v-else>{{ task.title }}</div>
                         </div>
+                        <div class="d-flex align-items-center">
                         <updateTask :task="task"/>
+                        <deleteTask :id="task.id"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -25,6 +28,7 @@ import { useStore } from 'vuex'
 import filterTasks from '../components/Tasks/Filtertasks.vue'
 import createTask from '../components/Tasks/Create.vue'
 import updateTask from '../components/Tasks/updateTask.vue'
+import deleteTask from '../components/Tasks/deleteTask.vue'
 
 const store = useStore()
 const tasks = computed(() => store.state.tasks)
