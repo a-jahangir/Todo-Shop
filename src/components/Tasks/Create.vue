@@ -37,6 +37,7 @@ async function storeTask () {
     titleErrorText.value = ''
     await store.dispatch('task/storeTask', title.value)
     loading.value = false
+    title.value = ''
   }
 }
 
