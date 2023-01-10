@@ -31,10 +31,10 @@ import updateTask from '../components/Tasks/updateTask.vue'
 import deleteTask from '../components/Tasks/deleteTask.vue'
 
 const store = useStore()
-const tasks = computed(() => store.state.tasks)
+const tasks = computed(() => store.getters['task/allTasks'])
 
 function getTasks () {
-  store.dispatch('getTasks')
+  store.dispatch('task/getTasks')
 }
 getTasks()
 </script>

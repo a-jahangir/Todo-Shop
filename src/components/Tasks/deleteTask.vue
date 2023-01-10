@@ -15,7 +15,7 @@ const store = useStore()
 
 async function deleteTask () {
   loading.value = true
-  await store.dispatch('deleteTask', props.id)
+  await store.dispatch('task/deleteTask', props.id)
   loading.value = false
 }
 

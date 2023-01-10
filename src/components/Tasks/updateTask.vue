@@ -16,7 +16,7 @@ const store = useStore()
 
 async function changeCompleted (task) {
   loading.value = true
-  await store.dispatch('updateTask', task)
+  await store.dispatch('task/updateTask', task)
   loading.value = false
 }
 

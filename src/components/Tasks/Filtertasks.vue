@@ -20,7 +20,7 @@ const store = useStore()
 const number = ref()
 
 function filterTasks () {
-  store.dispatch('filterTasks', number.value)
+  store.dispatch('task/filterTasks', number.value)
 }
 
 </script>
